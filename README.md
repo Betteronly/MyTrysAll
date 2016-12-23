@@ -13,6 +13,7 @@ springmvc4.2.5
 
 thymeleaf3.0.0Beta02
 
+jackson2.6.4
 
 jedis2.8.1
 

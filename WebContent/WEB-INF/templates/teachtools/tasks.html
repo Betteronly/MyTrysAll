@@ -4,7 +4,7 @@
 <head>
 <!-- <meta charset="UTF-8"> -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>陪教 统计/通知/报名</title>
+<title>陪教 任务</title>
 <link rel="stylesheet" type="text/css" media="all" href="../../css/extrathyme.css" th:href="@{/css/extrathyme.css}" />
 <link rel="stylesheet" type="text/css" href="../../jquery-easyui-1.5.1/themes/default/easyui.css"
   th:href="@{/jquery-easyui-1.5.1/themes/default/easyui.css}">
@@ -25,16 +25,16 @@
     <table>
       <thead>
         <tr>
-          <th th:text="#{school.name}">学校名称</th>
-          <th th:text="#{grade.name}">年级</th>
-          <th th:text="#{class.name}">班级</th>
+          <th th:text="#{tasks.name}">任务名称</th>
+          <th th:text="#{tasks.类型}">类型</th>
+          <th th:text="#{tasks.类型}">任务详细</th>
         </tr>
       </thead>
       <tbody>
-        <tr th:each="cls : ${classes}" score:classforposition="${tStat.count}">
-          <td th:text="${cls.school}">XXX学校</td>
-          <td th:text="${cls.grade}">xxx年级</td>
-          <td th:text="${cls.class}">xxx班</td>
+        <tr th:each="t : ${tasks}" score:classforposition="${tStat.count}">
+          <td th:text="${t.name}">XXX学校</td>
+          <td th:text="${t.type}">xxx年级</td>
+          <td th:text="${t.detail}">xxx年级</td>
         </tr>
       </tbody>
     </table>
