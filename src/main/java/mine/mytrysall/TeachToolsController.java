@@ -23,7 +23,49 @@ public class TeachToolsController {
         super();
     }
 
-    @RequestMapping(value = "schools", method = RequestMethod.GET)
+    @RequestMapping(value = "/schools_bootstrap", method = RequestMethod.GET)
+    public String schools_bootstrap(Model model) {
+        List<Object> tasks = new ArrayList<>();
+
+        Map<String, String> mapTasks = new HashMap<>();
+        mapTasks.put("school", "霍营小学");
+        mapTasks.put("grade", "一年级");
+        mapTasks.put("class", "一班");
+        tasks.add(mapTasks);
+
+        Map<String, String> mapTasks2 = new HashMap<>();
+        mapTasks2.put("school", "霍营小学");
+        mapTasks2.put("grade", "二年级");
+        mapTasks2.put("class", "二班");
+        tasks.add(mapTasks2);
+
+        model.addAttribute("classes", tasks);
+        model.addAttribute("tStat.count", 10);
+        return "teachtools/schools_bootstrap";
+    }
+
+    @RequestMapping(value = "/schools_easyui", method = RequestMethod.GET)
+    public String schools_easyui(Model model) {
+        List<Object> tasks = new ArrayList<>();
+
+        Map<String, String> mapTasks = new HashMap<>();
+        mapTasks.put("school", "霍营小学");
+        mapTasks.put("grade", "一年级");
+        mapTasks.put("class", "一班");
+        tasks.add(mapTasks);
+
+        Map<String, String> mapTasks2 = new HashMap<>();
+        mapTasks2.put("school", "霍营小学");
+        mapTasks2.put("grade", "二年级");
+        mapTasks2.put("class", "二班");
+        tasks.add(mapTasks2);
+
+        model.addAttribute("classes", tasks);
+        model.addAttribute("tStat.count", 10);
+        return "teachtools/schools_easyui";
+    }
+
+    @RequestMapping(value = "schools_thymeleaf", method = RequestMethod.GET)
     public String schools(Model model) {
         List<Object> tasks = new ArrayList<>();
 
@@ -41,7 +83,7 @@ public class TeachToolsController {
 
         model.addAttribute("classes", tasks);
         model.addAttribute("tStat.count", 10);
-        return "teachtools/schools";
+        return "teachtools/schools_thymeleaf";
     }
 
     @RequestMapping(value = "/schools1", method = RequestMethod.GET)
