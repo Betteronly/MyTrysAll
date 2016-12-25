@@ -1,4 +1,4 @@
-package com.betteronly.teachtools;
+package com.betteronly.teachtools.dao;
 
 public class TeachToolsDao {
 

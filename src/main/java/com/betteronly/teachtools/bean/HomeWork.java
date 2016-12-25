@@ -1,4 +1,4 @@
-package com.betteronly.teachtools;
+package com.betteronly.teachtools.bean;
 
 /**
  * 家庭作业

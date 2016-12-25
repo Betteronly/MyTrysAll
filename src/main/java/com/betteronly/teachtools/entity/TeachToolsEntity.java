@@ -1,4 +1,4 @@
-package com.betteronly.teachtools;
+package com.betteronly.teachtools.entity;
 
 import java.util.List;
 import java.util.Map;

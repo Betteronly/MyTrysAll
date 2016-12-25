@@ -37,7 +37,7 @@
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">
-        <div class="panel-body">
+        <div class="panel-body hover">
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
@@ -49,44 +49,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>语文</td>
-                <td>当天</td>
+              <tr th:each="hws : ${homeWorks.listHomeWorks}">
+                <td th:text="${hws.course}">语文</td>
+                <td th:text="${hws.deadline}">当天</td>
                 <td class="left">
-                  <!-- <div class="col-sm-1 col-md-1">
-                    <div class="thumbnail"> --> <img id="img1" class="min" src="../../images/kittens.jpg" th:src="@{/images/kittens.jpg}" alt="作业缩略图"> <!-- </div>
-                  </div> -->
+                  <img id="img1" class="min" src="../../images/kittens.jpg" th:src="@{/images/__${hws.picPath}__}" alt="作业缩略图">
                 </td>
-                <td>抄写生字：日，火，水</td>
+                <td th:text="${hws.content}">抄写</td>
                 <td>
                   <div id="myButtons1" class="bs-example">
-                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>语文</td>
-                <td>下周一</td>
-                <td>
-                  <!-- <div class="col-sm-1 col-md-1">
-                    <div class="thumbnail"> --> <img id="img2" class="min" src="../../images/语文161223.jpg" th:src="@{/images/语文161223.jpg}" alt="作业缩略图"> <!-- </div>
-                  </div> -->
-                </td>
-                <td>背诵课文P113</td>
-                <td>
-                  <div id="myButtons2" class="bs-example">
-                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>数学</td>
-                <td>改卷子</td>
-                <td></td>
-                <td>修改考试卷</td>
-                <td>
-                  <div id="myButtons3" class="bs-example">
-                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
+                    <button type="button" class="btn btn-primary" data-loading-text="已完成" th:text="${hws.completionStatus}">未</button>
                   </div>
                 </td>
               </tr>

@@ -1,8 +1,6 @@
-package com.betteronly.teachtools;
+package com.betteronly.teachtools.bean;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 家庭作业一览
@@ -12,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class HomeWorks {
     // 作业一览
-    @Autowired
+    // @Autowired
     private List<HomeWork> listHomeWorks;
 
     public List<HomeWork> getListHomeWorks() {

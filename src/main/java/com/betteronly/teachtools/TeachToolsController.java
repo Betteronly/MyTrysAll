@@ -13,14 +13,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.betteronly.teachtools.bean.HomeWorks;
+import com.betteronly.teachtools.service.TeachToolsServiceIf;
+
 @Controller
 @RequestMapping("/teachtools/*")
 public class TeachToolsController {
 
     @Autowired
-    TeachToolsService teachToolsService;
-    @Autowired
-    HomeWorks homeWorks;
+    TeachToolsServiceIf teachToolsService;
+
+    // @Autowired
+    // HomeWorks homeWorks;
 
     public TeachToolsController() {
         super();
@@ -28,10 +32,13 @@ public class TeachToolsController {
 
     @RequestMapping(value = "/schools_bootstrap", method = RequestMethod.GET)
     public String schools_bootstrap(Model model) {
-        String schoolId = "huoyingxiaoxue";
-        homeWorks = teachToolsService.getHomeWorks(schoolId);
-        model.addAttribute("homeWorks", homeWorks);
+        String schoolId = "huoying";
+        String gradeId = "1";
+        String classId = "4";
+        String homeWorkDate = "2016/12/25";
+        HomeWorks homeWorks = teachToolsService.getHomeWorks(schoolId, gradeId, classId, homeWorkDate);
 
+        model.addAttribute("homeWorks", homeWorks);
         return "teachtools/schools_bootstrap";
     }
 
