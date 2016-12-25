@@ -13,6 +13,10 @@ public class HomeWorks {
     // @Autowired
     private List<HomeWork> listHomeWorks;
 
+    // public HomeWorks(HomeWork homeWork) {
+    // this.listHomeWorks.add(homeWork);
+    // }
+
     public List<HomeWork> getListHomeWorks() {
         return listHomeWorks;
     }
