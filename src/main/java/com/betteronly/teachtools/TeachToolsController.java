@@ -1,10 +1,11 @@
-package mine.mytrysall;
+package com.betteronly.teachtools;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,28 +20,21 @@ public class TeachToolsController {
     // @Autowired
     // private TeamService teamService;
 
+    @Autowired
+    TeachToolsService teachToolsService;
+    @Autowired
+    HomeWorks homeWorks;
+
     public TeachToolsController() {
         super();
     }
 
     @RequestMapping(value = "/schools_bootstrap", method = RequestMethod.GET)
     public String schools_bootstrap(Model model) {
-        List<Object> tasks = new ArrayList<>();
+        String schoolId = "huoyingxiaoxue";
+        homeWorks = teachToolsService.getHomeWorks(schoolId);
+        model.addAttribute("homeWorks", homeWorks);
 
-        Map<String, String> mapTasks = new HashMap<>();
-        mapTasks.put("school", "霍营小学");
-        mapTasks.put("grade", "一年级");
-        mapTasks.put("class", "一班");
-        tasks.add(mapTasks);
-
-        Map<String, String> mapTasks2 = new HashMap<>();
-        mapTasks2.put("school", "霍营小学");
-        mapTasks2.put("grade", "二年级");
-        mapTasks2.put("class", "二班");
-        tasks.add(mapTasks2);
-
-        model.addAttribute("classes", tasks);
-        model.addAttribute("tStat.count", 10);
         return "teachtools/schools_bootstrap";
     }
 

@@ -1,4 +1,4 @@
-package mine.mytrysall;
+package com.betteronly.teachtools;
 
 public class TeachToolsDao {
 

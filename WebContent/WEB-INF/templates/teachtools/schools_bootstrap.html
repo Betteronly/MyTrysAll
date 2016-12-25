@@ -17,14 +17,18 @@
 <script type="text/javascript" src="../../jquery-easyui-1.5.1/jquery.easyui.mobile.js" th:src="@{/jquery-easyui-1.5.1/jquery.easyui.mobile.js}"></script>
  -->
 
+
 <!-- 引入 Bootstrap -->
-<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/bootstrap-3.3.7/css/bootstrap.min.css}" rel="stylesheet">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{/bootstrap-3.3.7/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css" href="../../css/teachtools.css" th:href="@{/css/teachtools.css}">
+<script type="text/javascript" src="../../js/teachtools.js" th:src="@{/js/teachtools.js}"></script>
 <script type="text/javascript" src="../../jquery-3.1.1/jquery-3.1.1.min.js" th:src="@{/jquery-3.1.1/jquery-3.1.1.min.js}"></script>
 <script type="text/javascript" src="../../bootstrap-3.3.7/js/bootstrap.js" th:src="@{/bootstrap-3.3.7/js/bootstrap.js}"></script>
+
 </head>
 
 <body>
-  <h1>霍营小学作业</h1>
+  <h3>霍营小学 > 一年级四班 作业</h3>
   <div class="panel-group" id="accordion">
     <div class="panel panel-info">
       <div class="panel-heading">
@@ -33,10 +37,62 @@
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">
-        <div class="panel-body">数学作业1：P115 改错</div>
-        <div class="panel-body">数学作业2：P115 改错</div>
-        <div class="panel-body">语文作业1：P115 改错</div>
-        <div class="panel-body">语文作业2：P115 改错</div>
+        <div class="panel-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th class="min-width40">课程</th>
+                <th class="min-width40">期限</th>
+                <th>附图</th>
+                <th class="min-width80">作业内容</th>
+                <th class="min-width50">完成情况</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>语文</td>
+                <td>当天</td>
+                <td class="left">
+                  <!-- <div class="col-sm-1 col-md-1">
+                    <div class="thumbnail"> --> <img id="img1" class="min" src="../../images/kittens.jpg" th:src="@{/images/kittens.jpg}" alt="作业缩略图"> <!-- </div>
+                  </div> -->
+                </td>
+                <td>抄写生字：日，火，水</td>
+                <td>
+                  <div id="myButtons1" class="bs-example">
+                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>语文</td>
+                <td>下周一</td>
+                <td>
+                  <!-- <div class="col-sm-1 col-md-1">
+                    <div class="thumbnail"> --> <img id="img2" class="min" src="../../images/语文161223.jpg" th:src="@{/images/语文161223.jpg}" alt="作业缩略图"> <!-- </div>
+                  </div> -->
+                </td>
+                <td>背诵课文P113</td>
+                <td>
+                  <div id="myButtons2" class="bs-example">
+                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>数学</td>
+                <td>改卷子</td>
+                <td></td>
+                <td>修改考试卷</td>
+                <td>
+                  <div id="myButtons3" class="bs-example">
+                    <button type="button" class="btn btn-primary" data-loading-text="已完成">未完成</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -46,7 +102,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2016年12月23日 作业</a>
         </h4>
       </div>
-      <div id="collapseTwo" class="panel-collapse collapse">
+      <div id="collapseTwo" class="panel-collapse collapse in1">
         <div class="panel-body">数学作业1：P115 改错</div>
         <div class="panel-body">数学作业2：P115 改错</div>
         <div class="panel-body">语文作业1：P115 改错</div>
@@ -236,26 +292,6 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-      /*
-      $(function() {
-        $('#collapseOne').collapse('hide')
-      });
 
-      $(function() {
-        $('#collapseTwo').collapse('show')
-      });
-
-      $(function() {
-        $('#collapseThree').collapse('toggle')
-      });
-
-      $(function() {
-        $('#collapseFour').collapse({
-          toggle : false
-        })
-      });
-      */
-    </script>
 </body>
 </html>
