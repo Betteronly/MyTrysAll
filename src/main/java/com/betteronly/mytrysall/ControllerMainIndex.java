@@ -1,4 +1,4 @@
-package mine.mytrysall;
+package com.betteronly.mytrysall;
 
 import java.util.ArrayList;
 import java.util.HashMap;

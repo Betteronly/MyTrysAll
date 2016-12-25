@@ -9,10 +9,6 @@ public class TeachToolsService {
     @Autowired
     private HomeWorks homeWorks;
 
-    public TeachToolsService() {
-        super();
-    }
-
     public String getSchools() {
         return null;
     }

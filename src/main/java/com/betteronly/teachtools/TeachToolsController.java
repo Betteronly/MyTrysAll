@@ -17,9 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/teachtools/*")
 public class TeachToolsController {
 
-    // @Autowired
-    // private TeamService teamService;
-
     @Autowired
     TeachToolsService teachToolsService;
     @Autowired

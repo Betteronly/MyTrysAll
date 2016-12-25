@@ -31,6 +31,7 @@
   <!-- User @Controller, @Service... annotations -->
   <!-- **************************************************************** -->
   <context:component-scan base-package="mine.mytrysall" />
+  <context:component-scan base-package="com.betteronly" />
 
   <!-- **************************************************************** -->
   <!-- MESSAGE EXTERNALIZATION/INTERNATIONALIZATION -->
