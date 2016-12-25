@@ -1,6 +1,6 @@
 package com.betteronly.teachtools.service;
 
-import com.betteronly.teachtools.bean.HomeWorks;
+import com.betteronly.teachtools.entity.HomeWorks;
 
 public interface TeachToolsServiceIf {
 

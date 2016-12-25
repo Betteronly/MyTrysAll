@@ -1,4 +1,4 @@
-package com.betteronly.teachtools.bean;
+package com.betteronly.teachtools.entity;
 
 import java.util.List;
 

@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.betteronly.teachtools.bean.HomeWork;
-import com.betteronly.teachtools.bean.HomeWorks;
+import com.betteronly.teachtools.entity.HomeWork;
+import com.betteronly.teachtools.entity.HomeWorks;
 
 @Service
 public class TeachToolsServiceImpl implements TeachToolsServiceIf {

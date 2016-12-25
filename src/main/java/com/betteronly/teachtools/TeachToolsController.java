@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.betteronly.teachtools.bean.HomeWorks;
+import com.betteronly.teachtools.entity.HomeWorks;
 import com.betteronly.teachtools.service.TeachToolsServiceIf;
 
 @Controller
