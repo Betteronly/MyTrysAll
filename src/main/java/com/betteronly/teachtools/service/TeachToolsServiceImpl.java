@@ -9,7 +9,7 @@ import com.betteronly.teachtools.entity.HomeWork;
 import com.betteronly.teachtools.entity.HomeWorks;
 
 @Service
-public class TeachToolsServiceImpl implements TeachToolsServiceIf {
+public class TeachToolsServiceImpl implements TeachToolsService {
 
     // @Autowired
     // private HomeWorks homeWorks;

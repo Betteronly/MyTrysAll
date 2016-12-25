@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.betteronly.teachtools.entity.HomeWorks;
-import com.betteronly.teachtools.service.TeachToolsServiceIf;
+import com.betteronly.teachtools.service.TeachToolsService;
 
 @Controller
 @RequestMapping("/teachtools/*")
 public class TeachToolsController {
 
     @Autowired
-    TeachToolsServiceIf teachToolsService;
+    TeachToolsService teachToolsService;
 
     // @Autowired
     // HomeWorks homeWorks;
