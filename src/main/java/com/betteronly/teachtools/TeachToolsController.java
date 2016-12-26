@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.betteronly.teachtools.entity.GradeAndClass;
 import com.betteronly.teachtools.entity.HomeWorks;
 import com.betteronly.teachtools.service.TeachToolsService;
 
@@ -30,7 +31,16 @@ public class TeachToolsController {
         super();
     }
 
-    @RequestMapping(value = "/schools_bootstrap", method = RequestMethod.GET)
+    @RequestMapping(value = "/schools", method = RequestMethod.GET)
+    public String schools(Model model) {
+        String schoolId = "huoying";
+        List<GradeAndClass> allGradeAndClasses = teachToolsService.getGradeAndClasses(schoolId);
+
+        model.addAttribute("allGradeAndClasses", allGradeAndClasses);
+        return "teachtools/schools";
+    }
+
+    @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
     public String schools_bootstrap(Model model) {
         String schoolId = "huoying";
         String gradeId = "1";
@@ -39,7 +49,7 @@ public class TeachToolsController {
         HomeWorks homeWorks = teachToolsService.getHomeWorks(schoolId, gradeId, classId, homeWorkDate);
 
         model.addAttribute("homeWorks", homeWorks);
-        return "teachtools/schools_bootstrap";
+        return "teachtools/homeworks";
     }
 
     @RequestMapping(value = "/schools_easyui", method = RequestMethod.GET)
@@ -64,7 +74,7 @@ public class TeachToolsController {
     }
 
     @RequestMapping(value = "schools_thymeleaf", method = RequestMethod.GET)
-    public String schools(Model model) {
+    public String schools_thymeleaf(Model model) {
         List<Object> tasks = new ArrayList<>();
 
         Map<String, String> mapTasks = new HashMap<>();

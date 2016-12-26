@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.betteronly.teachtools.entity.GradeAndClass;
 import com.betteronly.teachtools.entity.HomeWork;
 import com.betteronly.teachtools.entity.HomeWorks;
 
@@ -21,9 +22,28 @@ public class TeachToolsServiceImpl implements TeachToolsService {
     }
 
     @Override
-    public String getGradeAndClasses(String schoolId) {
+    public List<GradeAndClass> getGradeAndClasses(String schoolId) {
         // TODO Auto-generated method stub
-        return null;
+        List<GradeAndClass> lstGradeAndClasses = new ArrayList<>();
+        GradeAndClass gradeAndClass1 = new GradeAndClass();
+        gradeAndClass1.setSchool("霍营小学");
+        gradeAndClass1.setGrade("一年级");
+        gradeAndClass1.setGradeClass("四班");
+        lstGradeAndClasses.add(gradeAndClass1);
+
+        GradeAndClass gradeAndClass2 = new GradeAndClass();
+        gradeAndClass2.setSchool("霍营小学");
+        gradeAndClass2.setGrade("二年级");
+        gradeAndClass2.setGradeClass("一班");
+        lstGradeAndClasses.add(gradeAndClass2);
+
+        GradeAndClass gradeAndClass3 = new GradeAndClass();
+        gradeAndClass3.setSchool("霍营小学");
+        gradeAndClass3.setGrade("三年级");
+        gradeAndClass3.setGradeClass("二班");
+        lstGradeAndClasses.add(gradeAndClass3);
+
+        return lstGradeAndClasses;
     }
 
     @Override
