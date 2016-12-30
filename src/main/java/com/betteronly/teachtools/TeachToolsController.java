@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,13 +42,14 @@ public class TeachToolsController {
         return "teachtools/schools";
     }
 
-    @RequestMapping(value = "/homeworks", method = RequestMethod.GET)
-    public String schools_bootstrap(Model model) {
-        String schoolId = "huoying";
-        String gradeId = "1";
-        String classId = "4";
+    @RequestMapping(value = "/homeworks", method = RequestMethod.POST)
+    public String schools_bootstrap(HttpServletRequest request, String selectedSchoolId, Model model) {
+        String schoolId0 = selectedSchoolId; // 参数传入方式
+        String schoolId = request.getParameter("selectedSchoolId"); // 获取参数方式
+        String gradeId = request.getParameter("selectedGradeId"); // 获取参数方式
+        String gradeClassId = request.getParameter("selectedGradeClassId");
         String homeWorkDate = "2016/12/25";
-        HomeWorks homeWorks = teachToolsService.getHomeWorks(schoolId, gradeId, classId, homeWorkDate);
+        HomeWorks homeWorks = teachToolsService.getHomeWorks(schoolId, gradeId, gradeClassId, homeWorkDate);
 
         model.addAttribute("homeWorks", homeWorks);
         return "teachtools/homeworks";

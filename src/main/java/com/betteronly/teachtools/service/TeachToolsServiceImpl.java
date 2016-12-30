@@ -27,20 +27,29 @@ public class TeachToolsServiceImpl implements TeachToolsService {
         List<GradeAndClass> lstGradeAndClasses = new ArrayList<>();
         GradeAndClass gradeAndClass1 = new GradeAndClass();
         gradeAndClass1.setSchool("霍营小学");
+        gradeAndClass1.setSchoolId("huoying");
         gradeAndClass1.setGrade("一年级");
+        gradeAndClass1.setGradeId("grade01");
         gradeAndClass1.setGradeClass("四班");
+        gradeAndClass1.setGradeClassId("class04");
         lstGradeAndClasses.add(gradeAndClass1);
 
         GradeAndClass gradeAndClass2 = new GradeAndClass();
         gradeAndClass2.setSchool("霍营小学");
+        gradeAndClass1.setSchoolId("huoying");
         gradeAndClass2.setGrade("二年级");
+        gradeAndClass1.setGradeId("grade02");
         gradeAndClass2.setGradeClass("一班");
+        gradeAndClass1.setGradeClassId("class01");
         lstGradeAndClasses.add(gradeAndClass2);
 
         GradeAndClass gradeAndClass3 = new GradeAndClass();
         gradeAndClass3.setSchool("霍营小学");
+        gradeAndClass1.setSchoolId("huoying");
         gradeAndClass3.setGrade("三年级");
+        gradeAndClass1.setGradeId("grade03");
         gradeAndClass3.setGradeClass("二班");
+        gradeAndClass1.setGradeClassId("class02");
         lstGradeAndClasses.add(gradeAndClass3);
 
         return lstGradeAndClasses;

@@ -32,15 +32,18 @@
 <body>
   <h3>学校/组织/团体</h3>
   <div class="panel-group" id="accordion">
-    <form id='schoolForm' action="schools" method="POST">
+    <form id='schoolForm' action="homeworks" method="POST">
       <div class="panel panel-info">
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">霍营小学</a>
+            <input type="hidden" th:id="selectedSchoolId" th:name="selectedSchoolId" th:value="defaulthuoying" />
+            <input type="hidden" th:id="selectedGradeId" th:name="selectedGradeId" th:value="defaultGradeId" />
+            <input type="hidden" th:id="selectedGradeClassId" th:name="selectedGradeClassId" th:value="defaultGradeClassId" />
           </h4>
         </div>
         <div id="collapseOne" class="panel-collapse collapse">
-          <div class="panel-body hover">
+          <div class="panel-body">
             <table id='tableSchools' class="table table-bordered table-hover">
               <thead>
                 <tr>
@@ -49,9 +52,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr th:id="tr1" th:each="cls : ${allGradeAndClasses}">
+                <tr th:name=${clsStat.count} th:each="cls,clsStat : ${allGradeAndClasses}">
                   <td th:text="${cls.grade}">一年级</td>
                   <td th:text="${cls.gradeClass}">一班</td>
+                  <input type="hidden" th:id=${"gradeId"} th:name=${"gradeId"} th:value="${cls.gradeId}" />
+                  <input type="hidden" th:id=${"gradeClassId"} th:name=${"gradeClassId"} th:value="${cls.gradeClassId}" />
                 </tr>
               </tbody>
             </table>
